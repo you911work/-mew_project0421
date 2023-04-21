@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20230317-2 練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+</head>
+<style>
+    .title {
+        padding: 10px;
+        background-image: url(img01/title.jpg);
+        height: 200px;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .myimg {
+        height: 250px;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 10px;
+    }
+
+    .myimg:hover {
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .timeline-section {
+        position: relative;
+        padding-top: 20px;
+    }
+
+    .timeline-section:before {
+        position: absolute;
+        content: "";
+        width: 5px;
+        background-color: lightgrey;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-section-point {
+        position: relative;
+    }
+
+    .timeline-section-point:before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        top: 40%;
+        bottom: 0;
+        border: 5px solid lightgray;
+        border-radius: 10px;
+    }
+
+    .timeline-section-point:hover:before {
+        width: 22px;
+        height: 22px;
+        background-color: lightgray;
+        border: 1px solid lightgray;
+        border-radius: 50%;
+    }
+
+    @media screen and (max-width:768px) {
+        .timeline-section-point:before {
+            display: none;
+        }
+
+        .timeline-section:before {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <div class="title">
+        <div class="fs-1 text-center text-light mt-3 offset-3">MY STORY
+            <p class="fs-3">精彩人生 從零開始</p>
+        </div>
+    </div>
+    <div class="container mt-3 mb-3">
+        <div class="timeline-section">
+            <div class="row justify-content-center align-items-center mt-3 timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/001.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">1981 出生</div>
+                        <p>誕生於世界，跟愛我的父母</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 flex-row-reverse timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/002.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">1987 小學入學</div>
+                        <p>就讀國小 快樂成長</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/003.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">1993 國中入學</div>
+                        <p>逐漸變成了一個小屁孩</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 flex-row-reverse timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/004.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">1996 高中入學</div>
+                        <p>升學壓力大，每天念書</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/005.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">1999 軍校入學</div>
+                        <p>投筆從戎</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 flex-row-reverse timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/006.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2003 軍校畢業</div>
+                        <p>民國92年軍校畢業，投身陸戰隊新兵訓練中心擔任中國民國最菜軍官[排長]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/007.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2005 三軍聯訓基地</div>
+                        <p>行軍300公里，走遍恆春半島</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 flex-row-reverse timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/008.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2006 左營兩棲基地</div>
+                        <p>乾溼網教練</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/009.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2008 加祿堂防砲基地</div>
+                        <p>勇奪2008年進訓最佳單位</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 flex-row-reverse timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/010.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2009 左營特戰基地</div>
+                        <p>除了累，還是累，只有累!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/011.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2015 海軍人生</div>
+                        <p>轉換軍涯跑道</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 flex-row-reverse timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/012.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2018 海軍人生2</div>
+                        <p>海軍人生的最終站</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/013.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2020 醫院人生</div>
+                        <p>軍旅生涯最終站</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center mt-3 flex-row-reverse timeline-section-point">
+                <div class="col-md-6">
+                    <div class="myimg" style="background-image: url(img01/014.jpg);"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text text-center">
+                        <div class="fs-4">2023 職訓</div>
+                        <p>學生人生技能</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
