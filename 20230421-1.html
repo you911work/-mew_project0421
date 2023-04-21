@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20230421-通用類別 Utilities(上)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+</head>
+<style>
+    .box{
+        width: 150px;
+        height: 150px;
+        background: #d0399d;
+        border: 5px solid #333;
+        display: inline-block;
+    }
+    .box01{
+        width: 220px;
+        height: 150px;
+        background: #d0399d;
+        border: 2px solid #333;
+        display: inline-block;
+    }
+</style>
+<body>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">1. border</div>
+        <div class="box border-top"></div>
+        <div class="box border-bottom"></div>
+        <div class="box border-start"></div>
+        <div class="box border-end"></div>
+    </div>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">1.1 border移除邊框</div>
+        <div class="box border border-0"></div>
+        <div class="box border border-start-0 "></div>
+        <div class="box border border-end-0 "></div>
+        <div class="box border border-top-0"></div>
+        <div class="box border border-bottom-0"></div>
+    </div>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">1.2 border-厚度和顏色</div>
+        <div class="box border border-2 "></div>
+        <div class="box border border-3 border-into"></div>
+        <div class="box border border-4 border-danger"></div>
+        <div class="box border border-5 border-primary"></div>
+        <div class="box border border-6 border-success"></div>
+    </div>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">1.3 border-圓角</div>
+        <div class="box border border-3 "></div>
+        <div class="box border border-3 rounded"></div>
+        <div class="box border border-3 rounded-top"></div>
+        <div class="box border border-3 rounded-bottom"></div>
+        <div class="box border border-3 rounded-start"></div>
+        <div class="box border border-3 rounded-end"></div>
+        <div class="box border border-3 rounded-circle"></div>
+        <div class="box01 border border-3 rounded-pill"></div>
+    </div>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">2.文字顏色</div>
+        <p class="text-primary">文字顏色
+            <a href="#" class="link-primary ps-3">這是一個超連結</a>
+        </p>
+        <p class="text-light">文字顏色
+            <a href="#" class="link-light ps-3">這是一個超連結</a>   
+        </p>
+        <p class="text-info">文字顏色</p>
+        <p class="text-success">文字顏色</p>
+        <p class="text-warning">文字顏色</p>
+        <p class="text-danger">文字顏色</p>
+        <p class="text-bg-dark">文字背景顏色</p>
+        <p class="text-bg-warning">文字背景顏色</p>
+    </div>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">3.display</div>
+       <div class="p-2 text-bg-primary mb-3">d-inline(未更動)</div>
+       <div class="p-2 text-bg-primary d-inline">d-inline</div>
+       <div class="p-2 text-bg-primary d-inline">d-inline</div>
+       <div class="p-2 text-bg-primary d-inline">d-inline</div>
+       <hr>
+       <span class="p-2 text-bg-primary">d-block</span>
+       <span class="p-2 text-bg-primary mt-3 d-block">d-block</span>
+       <hr>
+       <span class="p-2 text-bg-primary d-none d-lg-block">手機隱藏 PC lg 顯示</span>
+       <span class="p-2 text-bg-primary d-none mt-3 d-xl-block">手機隱藏 PC xl 顯示</span>
+    </div>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">4.文字互動</div>
+        <p class="user-select-all">老公優勢返回再次認真更多重要來說表示加上樓上及時，事故多個。(全部點選複製)
+        </p>
+        <p class="user-select-auto">老公優勢返回再次認真更多重要來說表示加上樓上及時，事故多個。(部份點選複製)
+        </p>
+        <p class="user-select-none">老公優勢返回再次認真更多重要來說表示加上樓上及時，事故多個。(不能點選複製)
+        </p>
+    </div>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">5.overflow</div>
+        <div class="box">還能自從，太麻里另一讀書正好年輕人官方我不媽媽原來，又是居民交友頭銜我還動作下午找不到等等發行多麼浪費畢竟文字，春節級別一句熱線付出長沙電池現代化有所報價，成。</div>
+        <div class="box overflow-auto">還能自從，太麻里另一讀書正好年輕人官方我不媽媽原來，又是居民交友頭銜我還動作下午找不到等等發行多麼浪費畢竟文字，春節級別一句熱線付出長沙電池現代化有所報價，成。</div>
+        <div class="box overflow-hidden">還能自從，太麻里另一讀書正好年輕人官方我不媽媽原來，又是居民交友頭銜我還動作下午找不到等等發行多麼浪費畢竟文字，春節級別一句熱線付出長沙電池現代化有所報價，成。</div>
+        <div class="box overflow-scroll">還能自從，太麻里另一讀書正好年輕人官方我不媽媽原來，又是居民交友頭銜我還動作下午找不到等等發行多麼浪費畢竟文字，春節級別一句熱線付出長沙電池現代化有所報價，成。</div>
+        <div class="box overflow-visible">還能自從，太麻里另一讀書正好年輕人官方我不媽媽原來，又是居民交友頭銜我還動作下午找不到等等發行多麼浪費畢竟文字，春節級別一句熱線付出長沙電池現代化有所報價，成。</div>
+        <hr>
+        <div class="fs-1">手機選單運用</div>
+        <div class=" bg-info w-100 ">
+            <ul class="text-nowrap d-flex list-unstyled overflow-scroll">
+                <li class="bg-primary p-3 me-1">選單001 - 接着把你。</li>
+                <li class="bg-primary p-3 me-1">選單002 - 接着把你。</li>
+                <li class="bg-primary p-3 me-1">選單003 - 接着把你。</li>
+                <li class="bg-primary p-3 me-1">選單004 - 接着把你。</li>
+                <li class="bg-primar p-3 me-1">選單005 - 接着把你。</li>
+                <li class="bg-primary p-3 me-1">選單006 - 接着把你。</li>
+                <li class="bg-primary p-3 me-1">選單007 - 接着把你。</li>
+                <li class="bg-primary p-3 me-1">選單008 - 接着把你。</li>
+                <li class="bg-primary p-3 me-1">選單009 - 接着把你。</li>
+                <li class="bg-primary p-3 me-1">選單010 - 接着把你。</li>
+            </ul>
+        </div>
+    </div>
+    <div class="demo bg-secondary mb-3">
+        <div class="fs-1">5.1.文字互動</div>
+        <p class="user-select-all">老公優勢返回再次認真更多重要來說表示加上樓上及時，事故多個。(全部點選複製)
+        </p>
+        <p class="user-select-auto">老公優勢返回再次認真更多重要來說表示加上樓上及時，事故多個。(部份點選複製)
+        </p>
+        <p class="user-select-none">老公優勢返回再次認真更多重要來說表示加上樓上及時，事故多個。(不能點選複製)
+        </p>
+    </div>
+    <div class="demo bg-secondary mb-3" style="height: 1000px;">
+        <div class="fs-1">6.sticky(固定元件)</div>
+        <ul class="text-nowrap d-flex list-unstyled overflow-scroll sticky-top">
+            <li class="bg-primary p-3 me-1">選單001 - 接着把你。</li>
+            <li class="bg-primary p-3 me-1">選單002 - 接着把你。</li>
+            <li class="bg-primary p-3 me-1">選單003 - 接着把你。</li>
+            <li class="bg-primary p-3 me-1">選單004 - 接着把你。</li>
+        </ul>
+        <p>氣息動力直播主作者鈴聲目標人力政治把你，交流厲害到來沒有任何將會失敗堅決設立微笑同意，只是書庫事情挑戰分為只要帶著，取消提示世界，室內得到同意免費版結構大家這樣怪物，公告那樣懂得最新筆記本細胞，文字。</p>
+        <p>氣息動力直播主作者鈴聲目標人力政治把你，交流厲害到來沒有任何將會失敗堅決設立微笑同意，只是書庫事情挑戰分為只要帶著，取消提示世界，室內得到同意免費版結構大家這樣怪物，公告那樣懂得最新筆記本細胞，文字。</p>
+        <p>氣息動力直播主作者鈴聲目標人力政治把你，交流厲害到來沒有任何將會失敗堅決設立微笑同意，只是書庫事情挑戰分為只要帶著，取消提示世界，室內得到同意免費版結構大家這樣怪物，公告那樣懂得最新筆記本細胞，文字。</p>
+        <p>氣息動力直播主作者鈴聲目標人力政治把你，交流厲害到來沒有任何將會失敗堅決設立微笑同意，只是書庫事情挑戰分為只要帶著，取消提示世界，室內得到同意免費版結構大家這樣怪物，公告那樣懂得最新筆記本細胞，文字。</p>
+        <p>氣息動力直播主作者鈴聲目標人力政治把你，交流厲害到來沒有任何將會失敗堅決設立微笑同意，只是書庫事情挑戰分為只要帶著，取消提示世界，室內得到同意免費版結構大家這樣怪物，公告那樣懂得最新筆記本細胞，文字。</p>
+        <p>氣息動力直播主作者鈴聲目標人力政治把你，交流厲害到來沒有任何將會失敗堅決設立微笑同意，只是書庫事情挑戰分為只要帶著，取消提示世界，室內得到同意免費版結構大家這樣怪物，公告那樣懂得最新筆記本細胞，文字。</p>
+        <ul class="text-nowrap d-flex list-unstyled overflow-scroll sticky-bottom">
+            <li class="bg-primary p-3 me-1">選單001 - 接着把你。</li>
+            <li class="bg-primary p-3 me-1">選單002 - 接着把你。</li>
+            <li class="bg-primary p-3 me-1">選單003 - 接着把你。</li>
+            <li class="bg-primary p-3 me-1">選單004 - 接着把你。</li>
+        </ul>
+    </div>
+    <div class="demo bg-light mb-3">
+        <div class="fs-1">7. shadow</div>
+        <div class="p-3 shadow-sm">批准公斤似乎，所以。(小)</div>
+        <div class="p-3 shadow">批准公斤似乎，所以。(中)</div>
+        <div class="p-3 shadow-lg">批准公斤似乎，所以。(大)</div>
+    </div>
+    <div class="demo bg-light mb-3">
+        <div class="fs-1">8. sizing(W)</div>
+        <div class="p-3 bg-primary w-25 mb-3">w-25</div>
+        <div class="p-3 bg-primary w-50 mb-3">w-50</div>
+        <div class="p-3 bg-primary w-75 mb-3">w-75</div>
+        <div class="p-3 bg-primary w-100 mb-3">w-100</div>
+    </div>
+    <div class="demo bg-light mb-3" style="height: 180px;">
+        <div class="fs-1">9. sizing(H)</div>
+        <div class="p-1 text-center bg-primary h-25 d-inline-block" style="width: 120px;">h-25</div>
+        <div class="p-1 text-center bg-primary h-50 d-inline-block" style="width: 120px;">h-50</div>
+        <div class="p-1 text-center bg-primary h-75 d-inline-block" style="width: 120px;">h-75</div>
+        <div class="p-1 text-center bg-primary h-100 d-inline-block" style="width: 120px;">h-100</div>
+        <div class="p-1 text-center bg-primary h-auto d-inline-block" style="width: 120px;">h-auto</div>
+    </div>
+    <div class="demo bg-light mb-3">
+        <div class="fs-1">10. vh, vw(註解處理)</div>
+        <div class="p-1 bg-info vw-100 mb-3">vw-100</div>
+        <div class="p-1 bg-info vh-100 mb-3">vh-100</div>
+    </div>
+    <div class="demo bg-light mb-3">
+        <div class="fs-1">11. text</div>
+        <div class="p-1 text-start"> 還是稿件十年感謝阿。</div>
+        <div class="p-1 text-center"> 還是稿件十年感謝阿。</div>
+        <div class="p-1 text-end"> 還是稿件十年感謝阿。</div>
+        <hr>
+        <div class="fs-1">結合中斷點</div>
+        <div class="p-1 text-sm-end text-lg-center text-xl-start"> 還是稿件十年感謝阿。</div>
+        <div class="p-1 text-sm-start text-lg-center text-xl-end"> 還是稿件十年感謝阿。</div>
+    </div>
+    <div class="demo bg-light mb-3">
+        <div class="fs-1">12. visible</div>
+        <div class="box"></div>
+        <div class="box invisible"></div>
+        <div class="box visible"></div>
+    </div>
+        
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    
+</body>
+</html>
