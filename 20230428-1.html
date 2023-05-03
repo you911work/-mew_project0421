@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20230428-元件(1)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/mycss.css">
+</head>
+<style>
+    .demo {
+        margin-bottom: 30px;
+    }
+
+    i {
+        font-size: 1.1em;
+    }
+</style>
+
+<body>
+    <div class="demo">
+        <div class="fs-2">1.Accordion<i class="bi bi-windows ms-3"></i></div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="demo">
+        <div class="fs-2">2.Alerts <i class="bi bi-unity ms-3"></i></div>
+        <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+        </div>
+        <div class="alert alert-primary" role="alert">
+            A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+        <div id="liveAlertPlaceholder"></div>
+        <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+        <script>
+            const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+            const alert = (message, type) => {
+                const wrapper = document.createElement('div')
+                wrapper.innerHTML = [
+                    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                    `   <div>${message}</div>`,
+                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                    '</div>'
+                ].join('')
+
+                alertPlaceholder.append(wrapper)
+            }
+
+            const alertTrigger = document.getElementById('liveAlertBtn')
+            if (alertTrigger) {
+                alertTrigger.addEventListener('click', () => {
+                    alert('Nice, you triggered this alert message!', 'success')
+                })
+            }
+        </script>
+
+    </div>
+    <div class="demo">
+        <div class="fs-2">3.Badges <i class="bi bi-stack ms-3"></i></div>
+        <span class="badge text-bg-success">success</span>
+        <span class="badge text-bg-danger">danger</span>
+        <button class="btn btn-warning">加入購物車
+            <span class="badge text-bg-secondary">9</span>
+        </button>
+        <button class="btn btn-primary position-relative">訊息
+            <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">99+</span>
+        </button>
+        <button class="btn btn-success position-relative ms-3">訊息
+            <span class="badge text-bg-dark position-absolute top-0 start-100 translate-middle">99+</span>
+        </button>
+        <hr>
+        <span class="badge text-bg-dark rounded-pill">起司</span>
+        <span class="badge text-bg-warning rounded-pill">巧克力</span>
+    </div>
+    <div class="demo">
+        <div class="fs-2">4.Breadcrumb<i class="bi bi-battery-full ms-3"></i></div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="demo">
+        <div class="fs-2">5.Buttons(多種寫法)<i class="bi bi-boxes ms-3"></i></div>
+        <button class="btn btn-primary">btn primary</button>
+        <hr>
+        <a href="#" class="btn btn-primary">a primary</a>
+        <hr>
+        <input type="button" class="btn btn-primary" value=" button primary">
+        <input type="submit" class="btn btn-primary" value="submit primary">
+        <input type="reset" class="btn btn-primary" value="reset primary">
+        <hr>
+        <div class="fs-3">5.1 outline</div>
+        <button class="btn btn-outline-danger">outline-danger</button>
+        <button class="btn btn-outline-primary">outline-primary</button>
+        <button class="btn btn-outline-info">outline-info</button>
+        <hr>
+        <div class="fs-3">5.2 尺寸大小</div>
+        <button class="btn btn-danger btn-lg">btn-lg</button>
+        <button class="btn btn-danger">btn</button>
+        <button class="btn btn-danger btn-sm">btn-sm</button>
+        <hr>
+        <div class="fs-3">5.3 disabled</div>
+        <button class="btn btn-danger" disabled>售完</button>
+        <hr>
+        <div class="fs-3">5.4 滿版</div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-outline-danger">outline-danger</button>
+            <button class="btn btn-outline-primary">outline-primary</button>
+        </div>
+        <hr>
+        <div class="fs-3">5.5響應式</div>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-outline-danger">outline-danger</button>
+            <button class="btn btn-outline-primary">outline-primary</button>
+        </div>
+        <hr>
+        <div class="fs-3">5.6 mx-auto</div>
+        <div class="d-grid gap-2 col-3 mx-auto">
+            <button class="btn btn-outline-danger">outline-danger</button>
+            <button class="btn btn-outline-primary">outline-primary</button>
+        </div>
+        <hr>
+        <div class="fs-3">5.7 d-flex && justify-content-end</div>
+        <div class="d-grid gap-2 d-flex justify-content-end">
+            <button class="btn btn-outline-danger">outline-danger</button>
+            <button class="btn btn-outline-primary">outline-primary</button>
+        </div>
+
+    </div>
+    <div class="demo">
+        <div class="fs-2">6.Cards<i class="bi bi-camera ms-3"></i></div>
+        <div class="card col-6">
+            <img src="./img/car001.avif" class="card-img-top">
+            <div class="card-body">
+                <div class="card-title ">車輛介紹</div>
+                <div class="card-text">為了爆炸早已成就美元太陽報價哈哈又是，評價你們的，無人世界。元太陽報價哈哈又是，評價你們的，無人世界</div>
+                <div class="mx-auto mb-3 mt-3 col-4">
+                    <a href="#" class="btn btn-info">確認</a>
+                    <a href="#" class="btn btn-danger">取消</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="card col-6">
+            <img src="./img/car006.avif" class="card-img-top" alt="">
+            <div class="card-header">
+                <h1>速霸陸 BRZ</h1>
+                <button class="btn btn-outline-dark">售價:200萬</button>
+                <hr>
+                <h5 class="">配備:</h5>
+                <span class="badge text-bg-danger">渦輪增壓引擎</span>
+                <span class="badge text-bg-info ms-2">鍛造鋁圈</span><span class="badge text-bg-warning ms-2">動力套件</span>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+            </div>
+            <div class="mx-auto mb-3 col-auto">
+                <a href="#" class="btn btn-success">確認</a>
+                <a href="#" class="btn btn-danger">取消</a>
+            </div>
+            <div class="Card-footer bg-warning">
+                <div class="fs-6 text-center">XXX 製</div>
+            </div>
+        </div>
+        <hr>
+        <div class="fs-2">Navigatio</div>
+        <div class="card col-9">
+            <div class="card text-center">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item" id="nav01">
+                            <a class="nav-link active" aria-current="true">焦點</a>
+                        </li>
+                        <li class="nav-item" id="nav02">
+                            <a class="nav-link">活動</a>
+                        </li>
+                        <li class="nav-item" id="nav03">
+                            <a class="nav-link">娛樂</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body" id="navdata">
+                    <div class="row">
+                        <div class="col-7">
+                            <img src="./img001/1.webp" class="img-fluid mb-1" alt="">
+                            <div class="row">
+                                <img src="./img001/2.webp" class="img-fluid col-md-6 pe-0" alt="">
+                                <img src="./img001/3.webp" class="img-fluid col-md-6 ps-0" alt="">  
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a>
+                            <p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p>
+                            <a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a>
+                            <p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p>
+                            <a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a>
+                            <p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p>
+                            <a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a>
+                            <p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p>
+                            <a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a>
+                            <p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#nav01").click(function () {
+                $("#nav01 a").addClass("active");
+                $("#nav02 a").removeClass("active");
+                $("#nav03 a").removeClass("active");
+
+                var strHTML = '<div class="card-body" id="navdata"><div class="row"><div class="col-7"><img src="./img001/1.webp" class="img-fluid mb-1" alt=""><div class="row"><img src="./img001/2.webp" class="img-fluid col-md-6 pe-0" alt=""><img src="./img001/3.webp" class="img-fluid col-md-6 ps-0" alt=""></div></div><div class="col-5"><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p></div></div></div>';
+
+                $("#navdata").html(strHTML);
+            });
+
+
+            $("#nav02").click(function () {
+                $("#nav02 a").addClass("active");
+                $("#nav03 a").removeClass("active");
+                $("#nav01 a").removeClass("active");
+
+                var strHTML ='<div class="card-body" id="navdata"><div class="row"><div class="col-7"><img src="./img001/4.webp" class="img-fluid mb-1" alt=""><div class="row"><img src="./img001/5.webp" class="img-fluid col-md-6 pe-0" alt=""><img src="./img001/6.webp" class="img-fluid col-md-6 ps-0" alt=""></div></div><div class="col-5"><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p></div></div></div>';
+
+                $("#navdata").html(strHTML);
+            });
+
+
+            $("#nav03").click(function () {
+                $("#nav03 a").addClass("active");
+                $("#nav01 a").removeClass("active");
+                $("#nav02 a").removeClass("active");
+
+                var strHTML ='<div class="card-body" id="navdata"><div class="row"><div class="col-7"><img src="./img001/7.webp" class="img-fluid mb-1" alt=""><div class="row"><img src="./img001/8.webp" class="img-fluid col-md-6 pe-0" alt=""><img src="./img001/9.webp" class="img-fluid col-md-6 ps-0" alt=""></div></div><div class="col-5"><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p><a href="#" class="fs-6">美企對陸市場重燃信心重燃信心心心</a><p class="fs-6 mb-1">美企對陸市場重燃信心重燃信心心心</p></div></div></div>';
+
+                $("#navdata").html(strHTML);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
