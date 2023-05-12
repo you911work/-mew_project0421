@@ -24,7 +24,7 @@ a{
 }
 
 .project_imgBx{
-    background-image: url(./images/Model-S.avif); 
+    background-image: url(../images/Model-S.avif); 
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ a{
 }
 
 .price_imgBx{
-    background-image: url(./images/price.png);
+    background-image: url(../images/price.png);
     height: 100%;
     background-position: center center;
     background-size: cover;
@@ -44,7 +44,7 @@ a{
 }
 
 .recruitment_imgBx01{
-    background-image: url(./images/徵才.png);
+    background-image: url(../images/徵才.png);
     height: 70vh;
     background-position: center center;
     background-size: cover;
@@ -53,7 +53,7 @@ a{
 }
 
 .recruitment_imgBx02{
-    background-image: url(./images/徵才2.jpg);
+    background-image: url(../images/徵才2.jpg);
     height: 70vh;
     background-position: center center;
     background-size: cover;
@@ -65,7 +65,7 @@ a{
 }
 
 .enterprise_imgBx{
-    background-image: url(./images/Zero_Emissions_Desktop.avif); 
+    background-image: url(../images/Zero_Emissions_Desktop.avif); 
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
