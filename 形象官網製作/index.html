@@ -542,7 +542,7 @@
         $(function () {
             $("#username").bind("input propertychange", function () {
                 // console.log($(this).val());
-                if ($(this).val().length > 2 && $(this).val().length < 5) {
+                if ($(this).val().length > 2 && $(this).val().length < 6) {
                     $(this).removeClass("is-invalid")
                     $(this).addClass("is-valid");
                     flag_username = true;
@@ -557,7 +557,7 @@
 
             $("#phone").bind("input propertychange", function () {
                 // console.log($(this).val());
-                if ($(this).val().length > 9) {
+                if ($(this).val().length > 9  && $(this).val().length < 11) {
                     $(this).removeClass("is-invalid")
                     $(this).addClass("is-valid");
                     flag_phone = true;
