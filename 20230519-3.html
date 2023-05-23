@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>ajax運用-旅館民宿</title>
+</head>
+<style>
+    .card:hover {
+        box-shadow: 2px 2px 2px 2px #ccc;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <div class="row" id="showmsg">
+            <div class="col-md-4 mt-3">
+                <div class="card h-100">
+                    <img src="./img/car007.avif" alt="">
+                    <h2>店名:xxxx</h2>
+                    <h4>電話:xxxx</h4>
+                    <h4>地址:xxxxxxxxxxx</h4>
+                    <p>服務資訊:xxxxxxxx</p>
+                    <p>停車位資訊:</p>
+                    <p>聯絡信箱:xxxxxxxxxx</p>
+                    <a href="#" class="btn btn-secondary">房間數:XX</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/jquery-3.6.4.min.js"></script>
+
+<script>
+
+    var mydata = [];
+
+    $(function () {
+        $.ajax({    //資料基本型態
+            type: "GET",
+            url: "./hotel_C_f.json",
+            dataType: "json",
+            success: showdata,
+            error: function () {
+                alert("error");
+            }
+        })
+    });
+
+    function showdata(data) {
+        console.log(data.XML_Head.Infos.Info);
+        mydata = data.XML_Head.Infos.Info;
+
+
+
+
+
+        $("#showmsg").empty();
+        for (var i = 0; i < 50; i++) {
+
+
+            var Pic = '';
+            if (mydata[i].Picture1 == '') {
+                Pic = 'img/111.jpg';
+            } else {
+                Pic = mydata[i].Picture1;
+            }
+
+
+            var numRoom = 0;
+            if (mydata[i].TotalNumberofRooms == null) {
+                numRoom = 0;
+            } else {
+                numRoom = mydata[i].TotalNumberofRooms;
+            }
+
+            if (mydata[i].TotalNumberofRooms > 20) {
+                var strHTML = '<div class="col-md-4 mt-3 "><div class="card h-100"><img src="' + Pic + '" alt=""><h2>店名:' + mydata[i].Name + '</h2><h4>電話:' + mydata[i].Tel + '</h4><h4>地址:' + mydata[i].Add + '</h4><p>服務資訊:' + mydata[i].Serviceinfo + '</p><p>停車位資訊:' + mydata[i].Parkinginfo + '</p><p>聯絡信箱:' + mydata[i].IndustryEmail + '</p><a href="#" class="btn btn-success">房間數: ' + mydata[i].TotalNumberofRooms + '</a></div></div>'
+            } else if (mydata[i].TotalNumberofRooms < 20 && mydata[i].TotalNumberofRooms > 10) {
+                var strHTML = '<div class="col-md-4 mt-3"><div class="card h-100"><img src="' + Pic + '" alt=""><h2>店名:' + mydata[i].Name + '</h2><h4>電話:' + mydata[i].Tel + '</h4><h4>地址:' + mydata[i].Add + '</h4><p>服務資訊:' + mydata[i].Serviceinfo + '</p><p>停車位資訊:' + mydata[i].Parkinginfo + '</p><p>聯絡信箱:' + mydata[i].IndustryEmail + '</p><a href="#" class="btn btn-warning">房間數: ' + mydata[i].TotalNumberofRooms + '</a></div></div>'
+            }else if(mydata[i].TotalNumberofRooms < 10){
+                var strHTML = '<div class="col-md-4 mt-3"><div class="card h-100"><img src="' + Pic + '" alt=""><h2>店名:' + mydata[i].Name + '</h2><h4>電話:' + mydata[i].Tel + '</h4><h4>地址:' + mydata[i].Add + '</h4><p>服務資訊:' + mydata[i].Serviceinfo + '</p><p>停車位資訊:' + mydata[i].Parkinginfo + '</p><p>聯絡信箱:' + mydata[i].IndustryEmail + '</p><a href="#" class="btn btn-danger">房間數: ' + mydata[i].TotalNumberofRooms + '</a></div></div>'
+            }
+
+
+
+            $("#showmsg").append(strHTML);
+        }
+
+    }
+
+
+</script>
+
+</html>

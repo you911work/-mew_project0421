@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>ajax運用-農村地方美食小吃特色料理</title>
+</head>
+<style>
+    .card:hover{
+        box-shadow: 2px 2px 2px 2px #ccc;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <div class="row" id="showmsg">
+            <div class="col-md-4 mt-3">
+                <div class="card h-100">
+                    <img src="./img/car007.avif" alt="">
+                    <h2>店名:xxxx</h2>
+                    <h4>電話:xxxx</h4>
+                    <h4>地址:xxxxxxxxxxx</h4>
+                    <p>簡介:xxxxxxxxxx</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/jquery-3.6.4.min.js"></script>
+
+<script>
+
+
+    $(function(){
+        $.ajax({    //資料基本型態
+            type: "GET",
+            url: "https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx",
+            dataType: "json",
+            success: showdata,
+            error: function(){
+                alert("error-https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx");
+            }
+        })
+    });
+
+    function showdata(data){
+        console.log(data);
+
+        $("#showmsg").empty();
+        for(var i=0; i<data.length; i++){
+
+            var MyHostWords = data[i].HostWords.substring(0, 60);
+
+            var strHTML = '<div class="col-md-4 mt-3" ><div class="card h-100"><img src="'+ data[i].PicURL +'" alt=""><h2>店名: '+ data[i].Name +'</h2><h4>電話:'+ data[i].Tel +'</h4><h4>地址:'+ data[i].Address+'</h4><p>簡介:'+ MyHostWords +'...</p></div></div>';
+
+            $("#showmsg").append(strHTML);
+        }
+
+        
+    }
+
+
+</script>
+
+</html>

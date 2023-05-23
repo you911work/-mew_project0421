@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>ajax運用-結合opendata</title>
+</head>
+
+
+<body>
+    <div class="box" id="showmsg">
+        <h2>XXXXX</h2>
+        <h3>電話</h3>
+        <img src="" style="width: 300px;" alt="">
+    </div>
+
+</body>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/jquery-3.6.4.min.js"></script>
+
+<script>
+
+
+    $(function(){
+        $.ajax({
+            type: "GET",
+            url: "https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx",
+            dataType: "json",
+            success: showdata,
+            error: function(){
+                alert("error-https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx");
+            }
+        })
+    });
+
+    function showdata(data){
+        console.log(data);
+
+        $("#showmsg").empty();
+        for(var i=0; i<data.length; i++){
+            console.log(data[i].Name);
+            var num = i+1;
+            $("#showmsg").append('<h2>'+ num + '.'+ data[i].Name + '<br>'+'<h3>'+ '電話:' + data[i].Tel +'</h3>'+ '<img src=" ' + data[i].PicURL + '" style="width: 300px;" alt="">'+'</h2>');
+        }
+
+        
+    }
+
+
+</script>
+
+</html>
