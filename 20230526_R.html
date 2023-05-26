@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>20230526串接後台資料</title>
+</head>
+
+<style>
+    .card:hover {
+        box-shadow: 2px 2px 2px 2px #ccc;
+    }
+</style>
+<body>
+    <div class="container pt-3">
+        <div class="row" id="showmsg">
+            <ol class="list-group" >
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold h2">產品名稱: XX</div>
+                        <h4>價格: xx元</h4>
+                        <h4>數量: xx個</h4>
+                    </div>
+                    <span class="badge bg-primary rounded-pill align-self-center">總價: XXX元</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    
+        
+</body>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.6.4.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            $.ajax({    //資料基本型態
+            type: "GET",
+            url: "http://192.168.60.14/20230526_R.php",
+            dataType: "json",
+            success: showdata,
+            error: function () {
+            alert("error");
+            }
+        })
+    });
+
+        function showdata(data) {
+
+            $("#showmsg").empty();
+
+            console.log(data);
+            for (var i = 0; i < data.length; i++ ){
+                console.log(data[i].Pname);
+                console.log(data[i].Pnum);
+                console.log(data[i].Price);
+                console.log(data[i].Pnum * data[i].Price);
+
+                if (data[i].Price < 50){
+                    var strHTML = '<ol class="list-group"><li class="list-group-item d-flex justify-content-between align-items-start"><div class="ms-2 me-auto"><div class="fw-bold h2">產品名稱: '+data[i].Pname+'</div><h4 class="text-danger">價格: '+data[i].Price+'元</h4><h4>數量: '+data[i].Pnum+'個</h4></div><span class="badge bg-primary rounded-pill align-self-center">總價: '+data[i].Pnum * data[i].Price+'元</span></li></ol>';
+                }else if (data[i].Price > 51 && data[i].Price < 99){
+                    var strHTML = '<ol class="list-group"><li class="list-group-item d-flex justify-content-between align-items-start"><div class="ms-2 me-auto"><div class="fw-bold h2">產品名稱: '+data[i].Pname+'</div><h4 class="text-success">價格: '+data[i].Price+'元</h4><h4>數量: '+data[i].Pnum+'個</h4></div><span class="badge bg-primary rounded-pill align-self-center">總價: '+data[i].Pnum * data[i].Price+'元</span></li></ol>';
+                }else if (data[i].Price > 100){
+                    var strHTML = '<ol class="list-group"><li class="list-group-item d-flex justify-content-between align-items-start"><div class="ms-2 me-auto"><div class="fw-bold h2">產品名稱: '+data[i].Pname+'</div><h4 class="text-info">價格: '+data[i].Price+'元</h4><h4>數量: '+data[i].Pnum+'個</h4></div><span class="badge bg-primary rounded-pill align-self-center">總價: '+data[i].Pnum * data[i].Price+'元</span></li></ol>';
+                }
+
+                // var strHTML = '<ol class="list-group"><li class="list-group-item d-flex justify-content-between align-items-start"><div class="ms-2 me-auto"><div class="fw-bold h2">產品名稱: '+data[i].Pname+'</div><h4>價格: '+data[i].Price+'元</h4><h4>數量: '+data[i].Pnum+'個</h4></div><span class="badge bg-primary rounded-pill align-self-center">總價: '+data[i].Pnum * data[i].Price+'元</span></li></ol>';
+
+
+                $("#showmsg").append(strHTML);
+                
+            }
+
+            
+            
+        }
+
+
+    </script>
+</body>
+</html>
